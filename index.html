@@ -53,23 +53,23 @@
           </div>
           <div class="form-group">
             <label for="name">Nama</label>
-            <input type="text" name="name" class="form-control" id="exampleFormControlInput1" placeholder="">
+            <input type="text" name="name" class="form-control" id="exampleFormControlInput1" placeholder="" required>
           </div>
           <div class="form-group">
             <label for="jabatan">Jabatan</label>
-            <input type="text" class="form-control" name="jabatan" id="exampleFormControlInput1" placeholder="">
+            <input type="text" class="form-control" name="jabatan" id="exampleFormControlInput1" placeholder="" required>
           </div>
           <div class="form-group">
             <label for="lokasi">Lokasi</label>
-            <input type="text" class="form-control" name="lokasi" id="exampleFormControlInput1" placeholder="">
+            <input type="text" class="form-control" name="lokasi" id="exampleFormControlInput1" placeholder="" required>
           </div>
           <div class="form-group">
             <label for="pos">Pos</label>
-            <input type="text" class="form-control" name="pos" id="exampleFormControlInput1" placeholder="">
+            <input type="text" class="form-control" name="pos" id="exampleFormControlInput1" placeholder="" required>
           </div>
           <div class="form-group">
             <label for="shift">Shift</label>
-            <select class="form-control" name="shift" id="shift">
+            <select class="form-control" name="shift" id="shift" required>
               <option value="" disabled selected hidden>Select Shift</option>
               <option value="Pagi">P</option>
               <option value="Malam">M</option>
@@ -84,7 +84,7 @@
           </div>
           <div class="form-group">
             <label for="problem">Problem</label>
-            <select class="form-control" name="problem" id="problem">
+            <select class="form-control" name="problem" id="problem" required>
               <option value="" disabled selected hidden>Select a problem</option>
               <option value="PIN Telat Masuk">PIN Telat Masuk</option>
               <option value="PIN Geofence">PIN Geofence</option>
@@ -96,7 +96,7 @@
           </div>
           <div class="form-group">
             <label for="message">Keterangan</label>
-            <textarea class="form-control" name="message" id="exampleFormControlTextarea1" rows="3"></textarea>
+            <textarea class="form-control" name="message" id="exampleFormControlTextarea1" rows="3" required></textarea>
           </div>
           <input type="hidden" name="noWA" value="6281286011684">
           <button type="button" name="submit" class="btn btn-primary" onclick="submitForm()">Send</button>
@@ -162,16 +162,19 @@
 
   // Fungsi untuk menangani pengiriman data
   function submitForm() {
-    // Mendapatkan tanggal saat ini
-    var tanggal = document.querySelector('input[name="tanggal"]').value;
-    var name = document.querySelector('input[name="name"]').value;
-    var jabatan = document.querySelector('input[name="jabatan"]').value;
-    var lokasi = document.querySelector('input[name="lokasi"]').value;
-    var pos = document.querySelector('input[name="pos"]').value;
-    var shift = document.querySelector('select[name="shift"]').value;
-    var problem = document.querySelector('select[name="problem"]').value;
-    var message = document.querySelector('textarea[name="message"]').value;
+  // Mendapatkan tanggal saat ini
+  var tanggal = document.querySelector('input[name="tanggal"]').value;
+  var name = document.querySelector('input[name="name"]').value;
+  var jabatan = document.querySelector('input[name="jabatan"]').value;
+  var lokasi = document.querySelector('input[name="lokasi"]').value;
+  var pos = document.querySelector('input[name="pos"]').value;
+  var shift = document.querySelector('select[name="shift"]').value;
+  var problem = document.querySelector('select[name="problem"]').value;
+  var message = document.querySelector('textarea[name="message"]').value;
 
+  // Periksa apakah semua input yang diperlukan telah diisi
+  if (tanggal && name && jabatan && lokasi && pos && shift && problem && message) {
+    // Semua kolom yang diperlukan telah diisi, lanjutkan dengan mengirim data
     sendToWhatsApp(tanggal, name, jabatan, lokasi, pos, shift, problem, message);
 
     var formData = new FormData();
@@ -186,7 +189,12 @@
 
     sendToGoogleSpreadsheet(formData);
     // Tambahkan kode lain yang perlu dijalankan setelah mengirim data.
+  } else {
+    // Tampilkan pesan kesalahan atau tindakan yang sesuai jika input belum lengkap.
+    alert("Harap isi semua kolom yang wajib diisi.");
   }
+}
+
 </script>
 
 </body>

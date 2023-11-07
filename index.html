@@ -133,14 +133,14 @@
 <script>
   // Fungsi untuk mengirim data ke WhatsApp
   function sendToWhatsApp(tanggal, name, jabatan, lokasi, pos, shift, problem, message) {
-    var messageText = "Tanggal: " + tanggal + "%0A" +
-                     "Nama: " + name + "%0A" +
-                     "Jabatan: " + jabatan + "%0A" +
-                     "Lokasi: " + lokasi + "%0A" +
-                     "Pos: " + pos + "%0A" +
-                     "Shift: " + shift + "%0A" +
-                     "Problem: " + problem + "%0A" +
-                     "Keterangan: " + message;
+    var messageText = "Tanggal : " + tanggal + "%0A" +
+                     "Nama : " + name + "%0A" +
+                     "Jabatan : " + jabatan + "%0A" +
+                     "Lokasi : " + lokasi + "%0A" +
+                     "Pos : " + pos + "%0A" +
+                     "Shift : " + shift + "%0A" +
+                     "Problem : " + problem + "%0A" +
+                     "Keterangan : " + message;
 
     var whatsappLink = "https://api.whatsapp.com/send?phone=&text=" + messageText;
     window.open(whatsappLink, "_blank");

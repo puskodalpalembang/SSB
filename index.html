@@ -143,16 +143,8 @@
                      "Problem : " + problem + "%0A" +
                      "Keterangan : " + message;
 
-  var win = window.open('https://api.whatsapp.com/send?phone=&text='+messageText);
-    if (win) {
-        //Browser has allowed it to be opened
-        win.focus();
-    } else {
-        //Browser has blocked it
-        alert('Please allow popups for this website');
-    }
-return false;
-});
+var whatsappLink = "https://api.whatsapp.com/send?phone=&text=" + messageText;
+    window.open(whatsappLink, "_blank");
   }
 
   // Fungsi untuk mengirim data ke Google Spreadsheet

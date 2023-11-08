@@ -100,7 +100,7 @@
             <textarea class="form-control" name="message" id="exampleFormControlTextarea1" rows="3" required></textarea>
           </div>
           <input type="hidden" name="noWA" value="6281286011684">
-          <button type="button" name="submit" class="btn btn-primary" onclick="submitForm()">Send</button>
+          <button type="button" id="btn-wa" name="submit" class="btn btn-primary" onclick="submitForm()">Send</button>
         </div>
       </div>
     </form>
@@ -143,8 +143,19 @@
                      "Problem : " + problem + "%0A" +
                      "Keterangan : " + message;
 
-var whatsappLink = "https://api.whatsapp.com/send?phone=&text=" + messageText;
-    window.open(whatsappLink, "_blank");
+$("#btn-wa").click(function(){
+    var nomor = document.getElementById('nomer').value;
+    var pesan = document.getElementById('pesan').value;
+    var win = window.open('https://api.whatsapp.com/send?phone=&text='+messageText);
+    if (win) {
+        //Browser has allowed it to be opened
+        win.focus();
+    } else {
+        //Browser has blocked it
+        alert('Please allow popups for this website');
+    }
+return false;
+});
   }
 
   // Fungsi untuk mengirim data ke Google Spreadsheet

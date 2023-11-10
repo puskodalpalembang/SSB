@@ -60,17 +60,130 @@
             <input type="text" class="form-control" name="jabatan" id="exampleFormControlInput1" placeholder="" required>
           </div>
           <div class="form-group">
-            <label for="lokasi">Lokasi</label>
-            <input type="text" class="form-control" name="lokasi" id="exampleFormControlInput1" placeholder="" required>
-          </div>
-          <div class="form-group">
-            <label for="pos">Pos</label>
-            <input type="text" class="form-control" name="pos" id="exampleFormControlInput1" placeholder="" required>
-          </div>
+  <label for="lokasi">Lokasi</label>
+  <select class="form-control" name="lokasi" id="lokasiDropdown" onchange="showPosOptions()" required>
+    <option value="" disabled selected hidden>Pilih Lokasi</option>
+	<option value="lokasi1">Sektor 1</option>
+    <option value="lokasi2">Sektor 2</option>
+    <option value="lokasi3">Sektor 3</option>
+	<option value="lokasi4">Sektor 4</option>
+	<option value="lokasi5">Patroli</option>
+  </select>
+</div>
+
+<div class="form-group" id="posGroup" style="display: none;">
+  <label for="pos">Pos</label>
+  <select class="form-control" name="pos" id="posDropdown" required>
+ 
+    <!-- Opsi Pos akan ditambahkan melalui JavaScript -->
+  </select>
+</div>
+
+<script>
+  function showPosOptions() {
+    // Mendapatkan elemen dropdown Lokasi dan Pos
+    var lokasiDropdown = document.getElementById("lokasiDropdown");
+    var posDropdown = document.getElementById("posDropdown");
+
+    // Mendapatkan nilai terpilih dari dropdown Lokasi
+    var selectedLokasi = lokasiDropdown.value;
+
+    // Mendapatkan elemen div Pos
+    var posGroup = document.getElementById("posGroup");
+
+    // Hapus semua opsi Pos sebelum menambahkan yang baru
+    posDropdown.innerHTML = "";
+
+    // Tambahkan opsi Pos berdasarkan nilai terpilih dari dropdown Lokasi
+    switch (selectedLokasi) {
+      case "lokasi1":
+        // Opsi untuk Lokasi 1
+		posDropdown.add(new Option("Sektor 1", "Pilih Pos"));
+        posDropdown.add(new Option("Flamboyan", "Flamboyan"));
+        posDropdown.add(new Option("Gd. Handak Bungur", "Gd. Handak Bungur"));
+		posDropdown.add(new Option("Gunung Kembang", "Gunung Kembang"));
+		posDropdown.add(new Option("Jene", "Jene"));
+		posDropdown.add(new Option("Koneng", "Koneng"));
+		posDropdown.add(new Option("Soka", "Soka"));
+		posDropdown.add(new Option("Temelat", "Temelat"));
+		posDropdown.add(new Option("Teras", "Teras"));
+        break;
+      case "lokasi2":
+        // Opsi untuk Lokasi 2
+		posDropdown.add(new Option("Sektor 2", "Pilih Pos"));
+        posDropdown.add(new Option("Gd. Handak Pendopo", "Gd. Handak Pendopo"));
+        posDropdown.add(new Option("Gunung Megang", "Gunung Megang"));
+		posDropdown.add(new Option("Ibul", "Ibul"));
+		posDropdown.add(new Option("Lagan", "Lagan"));
+		posDropdown.add(new Option("Pendopo", "Pendopo"));
+		posDropdown.add(new Option("Pengabuan", "Pengabuan"));
+		posDropdown.add(new Option("Rambutan", "Rambutan"));
+        break;
+      case "lokasi3":
+        // Opsi untuk Lokasi 3
+        posDropdown.add(new Option("Sektor 3", "Pilih Pos"));
+		posDropdown.add(new Option("Danau Cala", "Danau Cala"));
+        posDropdown.add(new Option("Lica", "Lica"));
+		posDropdown.add(new Option("Matra", "Matra"));
+		posDropdown.add(new Option("Mess Pramuka Sec.", "Mess Pramuka Sec."));
+		posDropdown.add(new Option("Meta", "Meta"));
+        break;
+	   case "lokasi4":
+        // Opsi untuk Lokasi 4
+		posDropdown.add(new Option("Sektor 4", "Pilih Pos"));
+        posDropdown.add(new Option("Mess Sepatu Roda", "Mess Sepatu Roda"));
+        posDropdown.add(new Option("Palembang", "Palembang"));
+		posDropdown.add(new Option("Pig Louncher", "Pig Louncher"));
+		posDropdown.add(new Option("PLTG Borang", "PLTG Borang"));
+		posDropdown.add(new Option("PLTG Indralaya", "PLTG Indralaya"));
+		posDropdown.add(new Option("PLTG Kramasan", "PLTG Kramasan"));
+		posDropdown.add(new Option("Serdang", "Serdang"));
+        break;
+	   case "lokasi5":
+        // Opsi untuk Lokasi 5
+		posDropdown.add(new Option("Patroli", "Pilih Pos"));
+		posDropdown.add(new Option("Flamboyan", "Flamboyan"));
+        posDropdown.add(new Option("Gd. Handak Bungur", "Gd. Handak Bungur"));
+		posDropdown.add(new Option("Gunung Kembang", "Gunung Kembang"));
+		posDropdown.add(new Option("Jene", "Jene"));
+		posDropdown.add(new Option("Koneng", "Koneng"));
+		posDropdown.add(new Option("Soka", "Soka"));
+		posDropdown.add(new Option("Temelat", "Temelat"));
+		posDropdown.add(new Option("Teras", "Teras"));
+		posDropdown.add(new Option("Gd. Handak Pendopo", "Gd. Handak Pendopo"));
+        posDropdown.add(new Option("Gunung Megang", "Gunung Megang"));
+		posDropdown.add(new Option("Ibul", "Ibul"));
+		posDropdown.add(new Option("Lagan", "Lagan"));
+		posDropdown.add(new Option("Pendopo", "Pendopo"));
+		posDropdown.add(new Option("Pengabuan", "Pengabuan"));
+		posDropdown.add(new Option("Rambutan", "Rambutan"));
+		posDropdown.add(new Option("Danau Cala", "Danau Cala"));
+        posDropdown.add(new Option("Lica", "Lica"));
+		posDropdown.add(new Option("Matra", "Matra"));
+		posDropdown.add(new Option("Mess Pramuka Sec.", "Mess Pramuka Sec."));
+		posDropdown.add(new Option("Meta", "Meta"));
+        posDropdown.add(new Option("Mess Sepatu Roda", "Mess Sepatu Roda"));
+        posDropdown.add(new Option("Palembang", "Palembang"));
+		posDropdown.add(new Option("Pig Louncher", "Pig Louncher"));
+		posDropdown.add(new Option("PLTG Borang", "PLTG Borang"));
+		posDropdown.add(new Option("PLTG Indralaya", "PLTG Indralaya"));
+		posDropdown.add(new Option("PLTG Kramasan", "PLTG Kramasan"));
+		posDropdown.add(new Option("Serdang", "Serdang"));
+        break;
+      default:
+        // Tidak ada opsi yang dipilih
+        break;
+    }
+
+    // Menampilkan div Pos jika Lokasi dipilih
+    posGroup.style.display = selectedLokasi !== "" ? "block" : "none";
+  }
+</script>
+
           <div class="form-group">
             <label for="shift">Shift</label>
             <select class="form-control" name="shift" id="shift" required>
-              <option value="" disabled selected hidden>Select Shift</option>
+              <option value="" disabled selected hidden>Pilih Shift</option>
               <option value="Pagi">P</option>
               <option value="Malam">M</option>
               <option value="C">C</option>
@@ -85,7 +198,7 @@
           <div class="form-group">
             <label for="problem">Problem</label>
             <select class="form-control" name="problem" id="problem" required>
-              <option value="" disabled selected hidden>Select a problem</option>
+              <option value="" disabled selected hidden>Pilih Problem</option>
               <option value="PIN Telat Masuk">PIN Telat Masuk</option>
               <option value="PIN Geofence">PIN Geofence</option>
               <option value="PIN Pulang Awal">PIN Pulang Awal</option>

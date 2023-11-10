@@ -63,11 +63,11 @@
   <label for="lokasi">Lokasi</label>
   <select class="form-control" name="lokasi" id="lokasiDropdown" onchange="showPosOptions()" required>
     <option value="" disabled selected hidden>Pilih Lokasi</option>
-	<option value="lokasi1">Sektor 1</option>
-    <option value="lokasi2">Sektor 2</option>
-    <option value="lokasi3">Sektor 3</option>
-	<option value="lokasi4">Sektor 4</option>
-	<option value="lokasi5">Patroli</option>
+	<option value="Sektor 1">Sektor 1</option>
+    <option value="Sektor 2">Sektor 2</option>
+    <option value="Sektor 3">Sektor 3</option>
+	<option value="Sektor 4">Sektor 4</option>
+	<option value="Patroli">Patroli</option>
   </select>
 </div>
 
@@ -96,7 +96,7 @@
 
     // Tambahkan opsi Pos berdasarkan nilai terpilih dari dropdown Lokasi
     switch (selectedLokasi) {
-      case "lokasi1":
+      case "Sektor 1":
         // Opsi untuk Lokasi 1
 		posDropdown.add(new Option("Sektor 1", "Pilih Pos"));
         posDropdown.add(new Option("Flamboyan", "Flamboyan"));
@@ -108,7 +108,7 @@
 		posDropdown.add(new Option("Temelat", "Temelat"));
 		posDropdown.add(new Option("Teras", "Teras"));
         break;
-      case "lokasi2":
+      case "Sektor 2":
         // Opsi untuk Lokasi 2
 		posDropdown.add(new Option("Sektor 2", "Pilih Pos"));
         posDropdown.add(new Option("Gd. Handak Pendopo", "Gd. Handak Pendopo"));
@@ -119,7 +119,7 @@
 		posDropdown.add(new Option("Pengabuan", "Pengabuan"));
 		posDropdown.add(new Option("Rambutan", "Rambutan"));
         break;
-      case "lokasi3":
+      case "Sektor 3":
         // Opsi untuk Lokasi 3
         posDropdown.add(new Option("Sektor 3", "Pilih Pos"));
 		posDropdown.add(new Option("Danau Cala", "Danau Cala"));
@@ -128,7 +128,7 @@
 		posDropdown.add(new Option("Mess Pramuka Sec.", "Mess Pramuka Sec."));
 		posDropdown.add(new Option("Meta", "Meta"));
         break;
-	   case "lokasi4":
+	   case "Sektor 4":
         // Opsi untuk Lokasi 4
 		posDropdown.add(new Option("Sektor 4", "Pilih Pos"));
         posDropdown.add(new Option("Mess Sepatu Roda", "Mess Sepatu Roda"));
@@ -139,7 +139,7 @@
 		posDropdown.add(new Option("PLTG Kramasan", "PLTG Kramasan"));
 		posDropdown.add(new Option("Serdang", "Serdang"));
         break;
-	   case "lokasi5":
+	   case "Patroli":
         // Opsi untuk Lokasi 5
 		posDropdown.add(new Option("Patroli", "Pilih Pos"));
 		posDropdown.add(new Option("Flamboyan", "Flamboyan"));

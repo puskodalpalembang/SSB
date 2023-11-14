@@ -110,7 +110,17 @@
     switch (selectedLokasi) {
       case "Sektor 1":
         // Opsi untuk Lokasi 1
-		posDropdown.add(new Option("=== Pilih Pos ===", "Pilih Pos", true, true));
+			posDropdown.add(new Option("=== Pilih Pos ===", "")); // Menggunakan nilai kosong
+
+// Tambahkan event listener untuk memeriksa pemilihan opsi
+posDropdown.addEventListener("change", function() {
+    // Jika opsi default dipilih, atur kembali ke opsi valid yang lain
+    if (posDropdown.value === "") {
+        // Atur ke opsi lain yang valid
+        // Misalnya:
+        posDropdown.value = "opsi_valid_lainnya";
+    }
+});
         posDropdown.add(new Option("Flamboyan", "Flamboyan"));
         posDropdown.add(new Option("Gd. Handak Bungur", "Gd. Handak Bungur"));
 		posDropdown.add(new Option("Gunung Kembang", "Gunung Kembang"));
@@ -122,7 +132,17 @@
         break;
       case "Sektor 2":
         // Opsi untuk Lokasi 2
-		posDropdown.add(new Option("=== Pilih Pos ===", "Pilih Pos", true, true));
+			posDropdown.add(new Option("=== Pilih Pos ===", "")); // Menggunakan nilai kosong
+
+// Tambahkan event listener untuk memeriksa pemilihan opsi
+posDropdown.addEventListener("change", function() {
+    // Jika opsi default dipilih, atur kembali ke opsi valid yang lain
+    if (posDropdown.value === "") {
+        // Atur ke opsi lain yang valid
+        // Misalnya:
+        posDropdown.value = "opsi_valid_lainnya";
+    }
+});
         posDropdown.add(new Option("Gd. Handak Pendopo", "Gd. Handak Pendopo"));
         posDropdown.add(new Option("Gunung Megang", "Gunung Megang"));
 		posDropdown.add(new Option("Ibul", "Ibul"));
@@ -133,7 +153,17 @@
         break;
       case "Sektor 3":
         // Opsi untuk Lokasi 3
-        posDropdown.add(new Option("=== Pilih Pos ===", "Pilih Pos", true, true));
+        	posDropdown.add(new Option("=== Pilih Pos ===", "")); // Menggunakan nilai kosong
+
+// Tambahkan event listener untuk memeriksa pemilihan opsi
+posDropdown.addEventListener("change", function() {
+    // Jika opsi default dipilih, atur kembali ke opsi valid yang lain
+    if (posDropdown.value === "") {
+        // Atur ke opsi lain yang valid
+        // Misalnya:
+        posDropdown.value = "opsi_valid_lainnya";
+    }
+});
 		posDropdown.add(new Option("Danau Cala", "Danau Cala"));
         posDropdown.add(new Option("Lica", "Lica"));
 		posDropdown.add(new Option("Matra", "Matra"));
@@ -142,7 +172,17 @@
         break;
 	   case "Sektor 4":
         // Opsi untuk Lokasi 4
-		posDropdown.add(new Option("=== Pilih Pos ===", "Pilih Pos", true, true));
+			posDropdown.add(new Option("=== Pilih Pos ===", "")); // Menggunakan nilai kosong
+
+// Tambahkan event listener untuk memeriksa pemilihan opsi
+posDropdown.addEventListener("change", function() {
+    // Jika opsi default dipilih, atur kembali ke opsi valid yang lain
+    if (posDropdown.value === "") {
+        // Atur ke opsi lain yang valid
+        // Misalnya:
+        posDropdown.value = "opsi_valid_lainnya";
+    }
+});
         posDropdown.add(new Option("Mess Sepatu Roda", "Mess Sepatu Roda"));
         posDropdown.add(new Option("Palembang", "Palembang"));
 		posDropdown.add(new Option("Pig Louncher", "Pig Louncher"));
@@ -153,7 +193,17 @@
         break;
 	   case "Patroli":
         // Opsi untuk Lokasi 5
-		posDropdown.add(new Option("=== Pilih Pos ===", "Pilih Pos", true, true));
+			posDropdown.add(new Option("=== Pilih Pos ===", "")); // Menggunakan nilai kosong
+
+// Tambahkan event listener untuk memeriksa pemilihan opsi
+posDropdown.addEventListener("change", function() {
+    // Jika opsi default dipilih, atur kembali ke opsi valid yang lain
+    if (posDropdown.value === "") {
+        // Atur ke opsi lain yang valid
+        // Misalnya:
+        posDropdown.value = "opsi_valid_lainnya";
+    }
+});
 		posDropdown.add(new Option("Flamboyan", "Flamboyan"));
         posDropdown.add(new Option("Gd. Handak Bungur", "Gd. Handak Bungur"));
 		posDropdown.add(new Option("Gunung Kembang", "Gunung Kembang"));
